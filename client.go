@@ -152,7 +152,7 @@ func (a *Client) CopyPassThru(ctx context.Context, r io.Reader, remotePath strin
 
 	// Start the command first and get confirmation that it has been started
 	// before sending anything through the pipes.
-	err = session.Start(fmt.Sprintf("%s -qt %q", a.RemoteBinary, remotePath))
+	err = session.Start(fmt.Sprintf("%s -t %q", a.RemoteBinary, remotePath))
 	if err != nil {
 		return err
 	}
